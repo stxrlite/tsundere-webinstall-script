@@ -44,7 +44,7 @@ Invoke-WebRequest -Uri $ReleaseZipUrl -OutFile $ZipPath -UseBasicParsing
 Write-Host "==> Extracting files..." -ForegroundColor Yellow
 Expand-Archive -Path $ZipPath -DestinationPath $TsundereTempDir.FullName -Force
 
-# Find the extracted install script (sometimes ZIPs have a root folder inside)
+# Find the extracted install script 
 $InstallerScript = Get-ChildItem -Path $TsundereTempDir.FullName -Recurse -Filter "install-tsundere.ps1" | Select-Object -First 1
 
 if (-not $InstallerScript) {

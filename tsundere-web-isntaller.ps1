@@ -5,7 +5,6 @@ $ErrorActionPreference = 'Stop'
 # Do not show download progress
 $ProgressPreference = 'SilentlyContinue'
 
-# Taken from https://stackoverflow.com/a/34559554/6537420
 function New-TemporaryDirectory {
   $parent = [System.IO.Path]::GetTempPath()
   [string] $name = [System.Guid]::NewGuid()
